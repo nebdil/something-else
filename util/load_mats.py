@@ -8,7 +8,7 @@ from array import array
 import os.path as osp
 
 # load expression basis
-def LoadExpBasis(bfm_folder='BFM'):
+def LoadExpBasis(bfm_folder='/content/Deep3DFaceRecon_pytorch/BFM'):
     n_vertex = 53215
     Expbin = open(osp.join(bfm_folder, 'Exp_Pca.bin'), 'rb')
     exp_dim = array('i')
@@ -29,7 +29,7 @@ def LoadExpBasis(bfm_folder='BFM'):
 
 
 # transfer original BFM09 to our face model
-def transferBFM09(bfm_folder='BFM'):
+def transferBFM09(bfm_folder='/content/Deep3DFaceRecon_pytorch/BFM'):
     print('Transfer BFM09 to BFM_model_front......')
     original_BFM = loadmat(osp.join(bfm_folder, '01_MorphableModel.mat'))
     shapePC = original_BFM['shapePC']  # shape basis
@@ -102,7 +102,7 @@ def transferBFM09(bfm_folder='BFM'):
 
 
 # load landmarks for standard face, which is used for image preprocessing
-def load_lm3d(bfm_folder):
+def load_lm3d(bfm_folder='/content/Deep3DFaceRecon_pytorch/BFM'):
 
     Lm3D = loadmat(osp.join(bfm_folder, 'similarity_Lm3D_all.mat'))
     Lm3D = Lm3D['lm']
