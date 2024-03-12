@@ -51,7 +51,7 @@ class FlistDataset(BaseDataset):
         """
         BaseDataset.__init__(self, opt)
         
-        self.lm3d_std = load_lm3d(opt.bfm_folder)
+        self.lm3d_std = load_lm3d('/content/Deep3DFaceRecon_pytorch/BFM')
         
         msk_names = default_flist_reader(opt.flist)
         self.msk_paths = [os.path.join(opt.data_root, i) for i in msk_names]

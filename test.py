@@ -46,7 +46,7 @@ def main(rank, opt, name='examples'):
     visualizer = MyVisualizer(opt)
 
     im_path, lm_path = get_data_path(name)
-    lm3d_std = load_lm3d(opt.bfm_folder) 
+    lm3d_std = load_lm3d('/content/Deep3DFaceRecon_pytorch/BFM') 
 
     for i in range(len(im_path)):
         print(i, im_path[i])
