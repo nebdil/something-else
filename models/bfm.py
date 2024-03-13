@@ -24,8 +24,7 @@ class SH:
 
 
 class ParametricFaceModel:
-    def __init__(self, 
-                bfm_folder='/content/Deep3DFaceRecon_pytorch/BFM', 
+    def __init__(self,
                 recenter=True,
                 camera_distance=10.,
                 init_lit=np.array([
@@ -36,9 +35,9 @@ class ParametricFaceModel:
                 is_train=True,
                 default_name='BFM_model_front.mat'):
         
-        if not os.path.isfile(os.path.join(bfm_folder, default_name)):
-            transferBFM09(bfm_folder)
-        model = loadmat(os.path.join(bfm_folder, default_name))
+        if not os.path.isfile(os.path.join('/content/Deep3DFaceRecon_pytorch/BFM', default_name)):
+            transferBFM09()
+        model = loadmat(os.path.join('/content/Deep3DFaceRecon_pytorch/BFM', default_name))
         # mean face shape. [3*N,1]
         self.mean_shape = model['meanshape'].astype(np.float32)
         # identity basis. [3*N,80]

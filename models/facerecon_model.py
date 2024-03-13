@@ -92,7 +92,7 @@ class FaceReconModel(BaseModel):
         )
 
         self.facemodel = ParametricFaceModel(
-            bfm_folder=opt.bfm_folder, camera_distance=opt.camera_d, focal=opt.focal, center=opt.center,
+            camera_distance=opt.camera_d, focal=opt.focal, center=opt.center,
             is_train=self.isTrain, default_name=opt.bfm_model
         )
         
